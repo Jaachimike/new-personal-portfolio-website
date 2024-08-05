@@ -1,41 +1,62 @@
 import React from "react";
-import jetbrains from "../assets/svg/tools/jetbrains.svg";
 
-const Softwares = () => {
+interface SoftwareDetail {
+  toolName: string;
+  toolLogoSrc: string;
+  // yearsOfExperience: number;
+  toolDescription: string;
+}
+
+interface ToolCategory {
+  categoryTitle: string;
+  softwareDetails: SoftwareDetail[];
+}
+
+interface SoftwaresProps {
+  tools: ToolCategory[];
+}
+
+const Softwares = ({tools}: SoftwaresProps) => {
   return (
-    <div className="flex gap-20 border-l border-gray-700 pl-5">
-      {/* category title */}
-      <div className="text-sm text-white font-bold">
-        <h2>Development tools</h2>
-      </div>
-      {/* software list */}
-      <div className="flex-1">
-        {/* list one */}
-        <div>
-          {/* title and logo */}
-          <div className="flex justify-between mb-6">
-            <div className="flex flex-col justify-between">
-              <p className="text-white">Jetbrains Tools</p>
-              <p className=" italic">8 years</p>
-            </div>
-            <div>
-              <img src={jetbrains} alt="software logo" className="h-16" />
-            </div>
+    <div>
+      {tools.map((category, categoryIndex) => (
+        <div
+          key={categoryIndex}
+          className="grid grid-cols-3 border-l border-gray-700 pl-5 mb-20"
+        >
+          {/* category title */}
+          <div className="text-sm text-white font-bold">
+            <h2>{category.categoryTitle}</h2>
           </div>
-          {/* description */}
-          <div>
-            <p className="text-sm leading-7">
-              Jebrains is a cutting edge software that has specialized in
-              building intelligent development tools. My favorite tool to use is
-              Webstorm for Javascript based development. Other tools I've worked
-              with include PyCharm for Python, IntelliJ for Java and Datagrip
-              for data management. I've also been testing out Jetbrains Space as
-              a complete software development platform with support for Version
-              Control and Project management.
-            </p>
+          {/* software list */}
+          <div className="col-span-2">
+            {category.softwareDetails.map((software, softwareIndex) => (
+              <div key={softwareIndex} className="mb-10">
+                {/* title and logo */}
+                <div className="flex justify-between mb-6">
+                  <div className="flex flex-col justify-between">
+                    <p className="text-white">{software.toolName}</p>
+                    {/* <p className="italic">{software.yearsOfExperience} years</p> */}
+                  </div>
+                  <div>
+                    <img
+                      src={software.toolLogoSrc}
+                      alt={`${software.toolName} logo`}
+                      className="h-16 w-20"
+                    />
+                  </div>
+                </div>
+                {/* description */}
+                <div>
+                  <p className="text-sm leading-7">
+                    {software.toolDescription}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

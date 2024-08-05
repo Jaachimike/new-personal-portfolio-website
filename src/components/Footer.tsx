@@ -4,13 +4,14 @@ const Footer = () => {
   return (
     <div className="py-5">
       {/* navbar */}
-      <div className="border-t border-gray-700">
-        <ul className="flex text-sm gap-7 border border-gray-700 font-semibold text-white bg-jaachiGray-200 w-fit rounded-full py-3 px-9 *:cursor-pointer">
+      <div className="border-t border-gray-700 py-10 flex justify-between">
+        <ul className="flex text-sm gap-7  font-semibold text-white w-fit  *:cursor-pointer">
           <Link to="/">About</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/tools">Tools</Link>
           <Link to="/contact">Contact</Link>
         </ul>
+        <span className="text-sm">© 2024 Okafor Jaachimike</span>
       </div>
     </div>
   );
