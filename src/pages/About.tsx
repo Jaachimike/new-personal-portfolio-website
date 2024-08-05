@@ -4,12 +4,13 @@ import instagram from "../assets/svg/instagram.svg";
 import github from "../assets/svg/github.svg";
 import linkedin from "../assets/svg/linkedin.svg";
 import twitter from "../assets/svg/twitter.svg";
+import email from "../assets/svg/email.svg";
 
 const About = () => {
   const socialMediaLinks = [
     {
       logo: twitter,
-      text: "Follow on X",
+      text: "Follow on Twitter",
       link: "https://x.com/OJaachi",
     },
     {
@@ -32,7 +33,7 @@ const About = () => {
     <div>
       <div className="grid grid-cols-2 gap-16 py-24">
         {/* writeup */}
-        <div className="row-span-2 text-jaachiGray-100 flex flex-col gap-8">
+        <div className="row-span-2 flex flex-col gap-8">
           <h1 className="text-white text-5xl font-bold">
             Hi ✋🏽, I&apos;m Okafor Jaachimike.
           </h1>
@@ -75,16 +76,25 @@ const About = () => {
         </div>
         {/* social links */}
         <div className="space-y-5">
-          {socialMediaLinks.map((soicalMedia, index) => {
-            return (
-              <SocialMediaLink
-                key={index}
-                logo={soicalMedia.logo}
-                link={soicalMedia.link}
-                text={soicalMedia.text}
-              />
-            );
-          })}
+          {/* social media */}
+          <div className="space-y-5 border-b pb-10 border-gray-700">
+            {socialMediaLinks.map((soicalMedia, index) => {
+              return (
+                <SocialMediaLink
+                  key={index}
+                  logo={soicalMedia.logo}
+                  link={soicalMedia.link}
+                  text={soicalMedia.text}
+                />
+              );
+            })}
+          </div>
+          {/* email */}
+          <SocialMediaLink
+            logo={email}
+            text="okaforjaachi@gmail.com"
+            link="mailto:okaforjaachi@gmail.com"
+          />
         </div>
       </div>
     </div>
