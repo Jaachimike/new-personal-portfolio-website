@@ -1,9 +1,9 @@
 import React from "react";
+import {motion} from "framer-motion";
 
 interface SoftwareDetail {
   toolName: string;
   toolLogoSrc: string;
-  // yearsOfExperience: number;
   toolDescription: string;
 }
 
@@ -20,42 +20,73 @@ const Softwares = ({tools}: SoftwaresProps) => {
   return (
     <div>
       {tools.map((category, categoryIndex) => (
-        <div
+        <motion.div
           key={categoryIndex}
-          className="grid grid-cols-3 border-l border-gray-700 pl-5 mb-20"
+          className="grid grid-cols-3 gap-4 border-l border-gray-700 pl-5 mb-20"
+          initial={{opacity: 0, x: -50}}
+          animate={{opacity: 1, x: 0}}
+          transition={{duration: 0.5, delay: categoryIndex * 0.2}}
         >
           {/* category title */}
-          <div className="text-sm text-white font-bold">
+          <motion.div
+            className="text-sm text-white font-bold"
+            initial={{opacity: 0, y: 20}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.5, delay: categoryIndex * 0.2 + 0.2}}
+          >
             <h2>{category.categoryTitle}</h2>
-          </div>
+          </motion.div>
           {/* software list */}
           <div className="col-span-2">
             {category.softwareDetails.map((software, softwareIndex) => (
-              <div key={softwareIndex} className="mb-10">
+              <motion.div
+                key={softwareIndex}
+                className="mb-10"
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                transition={{
+                  duration: 0.5,
+                  delay: categoryIndex * 0.2 + softwareIndex * 0.1 + 0.3,
+                }}
+              >
                 {/* title and logo */}
                 <div className="flex justify-between mb-6">
-                  <div className="flex flex-col justify-between">
-                    <p className="text-white">{software.toolName}</p>
-                    {/* <p className="italic">{software.yearsOfExperience} years</p> */}
-                  </div>
-                  <div>
+                  <motion.div
+                    className="flex flex-col justify-between"
+                    whileHover={{scale: 1.05}}
+                  >
+                    <p className="text-white font-semibold">
+                      {software.toolName}
+                    </p>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{rotate: 360}}
+                    transition={{duration: 0.5}}
+                  >
                     <img
                       src={software.toolLogoSrc}
                       alt={`${software.toolName} logo`}
-                      className="h-16 w-20"
+                      className="h-10 w-16"
                     />
-                  </div>
+                  </motion.div>
                 </div>
                 {/* description */}
-                <div>
+                <motion.div
+                  initial={{opacity: 0}}
+                  animate={{opacity: 1}}
+                  transition={{
+                    duration: 0.5,
+                    delay: categoryIndex * 0.2 + softwareIndex * 0.1 + 0.5,
+                  }}
+                >
                   <p className="text-sm leading-7">
                     {software.toolDescription}
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -1,3 +1,5 @@
+import React from "react";
+import {motion} from "framer-motion";
 import profilePicture from "../assets/jpg/profile-pic.jpg";
 import SocialMediaLink from "../components/SocialMediaLink";
 import instagram from "../assets/svg/instagram.svg";
@@ -29,75 +31,139 @@ const About = () => {
       link: "https://www.linkedin.com/in/okafor-jaachimike/",
     },
   ];
+
   return (
-    <div>
-      <div className="grid grid-cols-2 gap-16 py-24">
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.5}}
+    >
+      <div className="grid grid-cols-2 gap-x-8 py-24">
         {/* writeup */}
-        <div className="row-span-2 flex flex-col gap-8">
-          <h1 className="text-white text-5xl font-bold">
+        <motion.div
+          className="row-span-2 flex flex-col gap-8"
+          initial={{x: -50, opacity: 0}}
+          animate={{x: 0, opacity: 1}}
+          transition={{duration: 0.5, delay: 0.2}}
+        >
+          <motion.h1
+            className="text-white text-5xl font-bold"
+            initial={{y: -20, opacity: 0}}
+            animate={{y: 0, opacity: 1}}
+            transition={{duration: 0.5, delay: 0.4}}
+          >
             Hi ✋🏽, I&apos;m Okafor Jaachimike.
-          </h1>
-          <p>
-            I am an accomplished Software Architect with over 8 years of
-            expertise in building technology solutions and a track record of
-            excellence.
-          </p>
-          <p>
-            I have loved being in the tech space since my early years, gaining
-            exposure to gadgets as a young kid. Since then, I have developed a
-            strong passion for the craft, always eagerly seeking out new
-            challenges and solutions. I dedicated several years to learning and
-            practicing the art of programming, hardware and software, both at a
-            personal and production level.
-          </p>
-          <p>
-            I have gained valuable experience working with both local and
-            international teams, both as a contributor and a leader. This
-            experience has enriched my life significantly, as I've had the
-            opportunity to culturally integrate with people from different parts
-            of the world. I have also had the privilege of speaking at various
-            tech conferences and teaching different groups how to become tech
-            experts and make a living from their expertise.
-          </p>
-          <p>
-            My journey as a builder has been a continuous one, and I still have
-            ambitious goals to tackle more complex challenges, mastering the art
-            of simplifying the most intricate problems. As I involve myself in
-            current technologies and always at its fronteir, I believe in a
-            future where we will create 'Out of Earth' solutions. But until
-            then, my passion for improving computer propagation and enhancing
-            computational logic remains the driving force behind my code. It's
-            all about writing code for a better, more advanced way of living.
-          </p>
-        </div>
+          </motion.h1>
+          <motion.p
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5, delay: 0.6}}
+          >
+            I am a passionate Full Stack Developer with over 4 years of
+            professional experience in crafting innovative web solutions. My
+            journey in technology began long before my university studies,
+            sparked by an early fascination with the digital world and its
+            endless possibilities. This early interest led me to pursue a degree
+            in Electrical and Electronics Engineering at Covenant University,
+            where I further honed my problem-solving skills and expanded my
+            technical expertise. Throughout my academic years and beyond, I've
+            been dedicated to mastering both front-end and back-end
+            technologies, building a comprehensive toolkit that includes HTML5,
+            CSS3, JavaScript (ES6+), TypeScript, React.js, Node.js, Express.js,
+            MongoDB, MySQL, PHP, and Laravel.
+          </motion.p>
+          <motion.p
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5, delay: 0.7}}
+          >
+            In my professional career, I've had the opportunity to work on
+            diverse projects, from dynamic web applications to robust back-end
+            systems. I take pride in having successfully delivered over 25
+            websites and web applications, each exceeding client expectations
+            and boosting their online presence. My experience has taught me the
+            value of clear communication and the importance of delivering
+            projects on time and within budget. I'm also proficient in
+            developing fully functional and responsive WordPress websites,
+            always focusing on optimizing user experiences across all devices.
+          </motion.p>
+          <motion.p
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5, delay: 0.8}}
+          >
+            I'm a firm believer in continuous learning and staying at the
+            forefront of web development trends. This commitment drives me to
+            constantly expand my skill set and tackle new challenges. Whether
+            it's integrating cutting-edge technologies or optimizing
+            performance, I'm always eager to push the boundaries of what's
+            possible in web development. My passion for improvement extends
+            beyond personal growth, as I actively collaborate with
+            cross-functional teams to deliver high-quality solutions.
+          </motion.p>
+          <motion.p
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5, delay: 0.9}}
+          >
+            When I'm not crafting code, you'll find me exploring the latest tech
+            innovations, contributing to open-source projects, or participating
+            in hackathons to sharpen my skills and connect with fellow
+            developers. I'm excited about the future of web technology and am
+            always looking for new opportunities to create impactful,
+            user-centric digital experiences. Let's build something amazing
+            together!
+          </motion.p>
+        </motion.div>
         {/* image */}
-        <div>
+        <motion.div
+          initial={{scale: 0.8, opacity: 0}}
+          animate={{scale: 1, opacity: 1}}
+          transition={{duration: 0.5, delay: 0.6}}
+        >
           <img src={profilePicture} alt="" className="rounded-2xl" />
-        </div>
+        </motion.div>
         {/* social links */}
-        <div className="space-y-5">
+        <motion.div
+          className="space-y-5"
+          initial={{y: 50, opacity: 0}}
+          animate={{y: 0, opacity: 1}}
+          transition={{duration: 0.5, delay: 0.8}}
+        >
           {/* social media */}
           <div className="space-y-5 border-b pb-10 border-gray-700">
-            {socialMediaLinks.map((soicalMedia, index) => {
+            {socialMediaLinks.map((socialMedia, index) => {
               return (
-                <SocialMediaLink
+                <motion.div
                   key={index}
-                  logo={soicalMedia.logo}
-                  link={soicalMedia.link}
-                  text={soicalMedia.text}
-                />
+                  initial={{x: -20, opacity: 0}}
+                  animate={{x: 0, opacity: 1}}
+                  transition={{duration: 0.3, delay: 1 + index * 0.1}}
+                >
+                  <SocialMediaLink
+                    logo={socialMedia.logo}
+                    link={socialMedia.link}
+                    text={socialMedia.text}
+                  />
+                </motion.div>
               );
             })}
           </div>
           {/* email */}
-          <SocialMediaLink
-            logo={email}
-            text="okaforjaachi@gmail.com"
-            link="mailto:okaforjaachi@gmail.com"
-          />
-        </div>
+          <motion.div
+            initial={{x: -20, opacity: 0}}
+            animate={{x: 0, opacity: 1}}
+            transition={{duration: 0.3, delay: 1.5}}
+          >
+            <SocialMediaLink
+              logo={email}
+              text="okaforjaachi@gmail.com"
+              link="mailto:okaforjaachi@gmail.com"
+            />
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
