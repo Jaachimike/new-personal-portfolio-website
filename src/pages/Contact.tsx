@@ -60,10 +60,13 @@ const Contact = () => {
           className="mb-10"
         >
           <h1 className="text-white text-3xl font-bold mb-6">
-            You can reach me on here
+            You can reach me on here 👇🏾
           </h1>
         </motion.div>
-        <form onSubmit={onSubmitForm} className="flex flex-col gap-4">
+        <form
+          onSubmit={onSubmitForm}
+          className="flex flex-col gap-4 text-black"
+        >
           <motion.input
             initial={{x: -40, opacity: 0}}
             animate={{x: 0, opacity: 1}}
