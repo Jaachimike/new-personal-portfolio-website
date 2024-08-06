@@ -1,4 +1,3 @@
-import React from "react";
 import {motion} from "framer-motion";
 import profilePicture from "../assets/jpg/profile-pic.jpg";
 import SocialMediaLink from "../components/SocialMediaLink";
@@ -7,6 +6,7 @@ import github from "../assets/svg/github.svg";
 import linkedin from "../assets/svg/linkedin.svg";
 import twitter from "../assets/svg/twitter.svg";
 import email from "../assets/svg/email.svg";
+import resume from "../assets/svg/curriculum-resume-svgrepo-com.svg";
 
 const About = () => {
   const socialMediaLinks = [
@@ -154,11 +154,18 @@ const About = () => {
             initial={{x: -20, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: 0.3, delay: 1.5}}
+            className="space-y-5"
           >
             <SocialMediaLink
               logo={email}
               text="okaforjaachi@gmail.com"
               link="mailto:okaforjaachi@gmail.com"
+            />
+            <SocialMediaLink
+              logo={resume}
+              text="Download my resume"
+              link="/my_resume.pdf"
+              download={true}
             />
           </motion.div>
         </motion.div>

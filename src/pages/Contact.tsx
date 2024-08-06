@@ -1,4 +1,4 @@
-import React, {useState, ChangeEvent, FormEvent} from "react";
+import {useState, ChangeEvent, FormEvent} from "react";
 import {motion} from "framer-motion";
 import contactImage from "../assets/jpg/63057135708.png";
 
