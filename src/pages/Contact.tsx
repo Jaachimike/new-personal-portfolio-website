@@ -24,13 +24,16 @@ const Contact = () => {
     e.preventDefault();
     try {
       setIsSubmitting(true);
-      const response = await fetch("YOUR_BACKEND_API_URL", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://persoal-portfolio-contact-form-api.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         // Handle successful submission
