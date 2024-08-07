@@ -37,11 +37,12 @@ const About = () => {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       transition={{duration: 0.5}}
+      className="px-4 sm:px-6 lg:px-8"
     >
-      <div className="grid grid-cols-2 gap-x-8 py-24">
+      <div className="grid lg:grid-cols-2 gap-8 py-8 sm:py-12 md:py-16 lg:py-24">
         {/* writeup */}
         <motion.div
-          className="row-span-2 flex flex-col gap-8"
+          className="row-span-2 flex flex-col gap-8 order-2 lg:order-1 "
           initial={{x: -50, opacity: 0}}
           animate={{x: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.2}}
@@ -120,12 +121,13 @@ const About = () => {
           initial={{scale: 0.8, opacity: 0}}
           animate={{scale: 1, opacity: 1}}
           transition={{duration: 0.5, delay: 0.6}}
+          className="order-1  lg:order-2"
         >
           <img src={profilePicture} alt="" className="rounded-2xl" />
         </motion.div>
         {/* social links */}
         <motion.div
-          className="space-y-5"
+          className="space-y-5 order-3"
           initial={{y: 50, opacity: 0}}
           animate={{y: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.8}}

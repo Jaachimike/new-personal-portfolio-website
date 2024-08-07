@@ -178,15 +178,15 @@ const tools = [
 
 const Tools = () => {
   return (
-    <div>
-      <div className="py-24">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="py-8 sm:py-12 md:py-16 lg:py-24">
         {/* writeup */}
-        <div className="w-9/12 mb-10">
+        <div className="w-full md:w-11/12 lg:w-9/12 mb-6 sm:mb-8 md:mb-10">
           <motion.h1
             initial={{x: -40, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: 0.5, delay: 0.3}}
-            className="text-white text-3xl font-bold mb-6"
+            className="text-white text-2xl sm:text-3xl font-bold mb-4 sm:mb-6"
           >
             Software I prefer, how I write and other things I recommend.
           </motion.h1>
@@ -194,13 +194,14 @@ const Tools = () => {
             initial={{x: -40, opacity: 0}}
             animate={{x: 0, opacity: 1}}
             transition={{duration: 0.5, delay: 0.4}}
+            className="text-sm sm:text-base"
           >
             I get queries on what programming languages I use and productivity
             tools for work management.
           </motion.p>
         </div>
         {/* softwares i use */}
-        <div className="w-10/12">
+        <div className="w-full sm:w-11/12 md:w-10/12">
           <Softwares tools={tools} />
         </div>
       </div>

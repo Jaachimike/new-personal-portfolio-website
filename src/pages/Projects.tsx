@@ -31,14 +31,14 @@ const Projects = () => {
   ];
 
   return (
-    <div>
-      <div className="py-24">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="py-8 sm:py-12 md:py-16 lg:py-24">
         {/* writeup */}
         <motion.div
           initial={{x: -40, opacity: 0}}
           animate={{x: 0, opacity: 1}}
           transition={{duration: 0.5, delay: 0.4}}
-          className="w-9/12 mb-10"
+          className="w-full md:w-11/12 lg:w-9/12 mb-6 sm:mb-8 md:mb-10"
         >
           <h1 className="text-white text-3xl font-bold mb-6">
             I've made a mark on ...

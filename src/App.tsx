@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="bg-black text-jaachiGray-100 min-h-screen flex flex-col">
-        <div className="bg-jaachiGray-300 border border-gray-700 container max-w-6xl mx-auto px-20 flex-grow flex flex-col">
+        <div className="bg-jaachiGray-300 border border-gray-700 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl flex-grow flex flex-col">
           <Navbar />
           <main className="flex-grow">
             <Routes>
