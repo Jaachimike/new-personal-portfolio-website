@@ -165,7 +165,7 @@ const About = () => {
             />
             <SocialMediaLink
               logo={resume}
-              text="Download my resume"
+              text="View my resume"
               link="/my_resume.pdf"
               download={true}
             />
