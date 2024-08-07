@@ -16,7 +16,7 @@ const SocialMediaLink = ({
       <a
         href={link}
         className="flex gap-5 group"
-        target={download ? undefined : "_blank"}
+        target="_blank"
         rel={download ? undefined : "noopener noreferrer"}
         download={download ? true : undefined}
       >
