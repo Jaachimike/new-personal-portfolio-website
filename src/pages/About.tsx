@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import profilePicture from "../assets/jpg/profile-pic.jpg";
+import profilePicture from "../assets/jpg/profile-pic2.jpg";
 import SocialMediaLink from "../components/SocialMediaLink";
 import instagram from "../assets/svg/instagram.svg";
 import github from "../assets/svg/github.svg";
@@ -53,7 +53,7 @@ const About = () => {
             animate={{y: 0, opacity: 1}}
             transition={{duration: 0.5, delay: 0.4}}
           >
-            Hi ✋🏽, I&apos;m Okafor Jaachimike.
+            Hello ✋🏽, I&apos;m Okafor Jaachimike.
           </motion.h1>
           <motion.p
             initial={{opacity: 0}}

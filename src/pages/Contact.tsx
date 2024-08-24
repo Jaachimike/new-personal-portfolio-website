@@ -4,6 +4,9 @@ import contactImage from "../assets/jpg/63057135708.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,12 +43,17 @@ const Contact = () => {
         console.log("Form submitted successfully");
         // Clear form fields
         setFormData({name: "", email: "", message: ""});
+        setSuccessMessage(
+          "hanks for submitting! Your message is in good hands."
+        );
       } else {
         // Handle error
         console.error("Form submission failed");
+        setErrorMessage("Failed to submit properly, please try again");
       }
     } catch (error) {
       console.error("Error:", error);
+      setErrorMessage("Failed to submit properly, please try again");
       setIsSubmitting(false);
     } finally {
       setIsSubmitting(false);
