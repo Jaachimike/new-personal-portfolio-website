@@ -1,11 +1,13 @@
 import {useState, ChangeEvent, FormEvent} from "react";
 import {motion} from "framer-motion";
 import contactImage from "../assets/jpg/63057135708.png";
+import Modal from "../components/Modal";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -44,17 +46,20 @@ const Contact = () => {
         // Clear form fields
         setFormData({name: "", email: "", message: ""});
         setSuccessMessage(
-          "hanks for submitting! Your message is in good hands."
+          "Thanks for submitting! Your message is in good hands."
         );
+        setIsModalOpen(true);
       } else {
         // Handle error
         console.error("Form submission failed");
         setErrorMessage("Failed to submit properly, please try again");
+        setIsModalOpen(true);
       }
     } catch (error) {
       console.error("Error:", error);
       setErrorMessage("Failed to submit properly, please try again");
       setIsSubmitting(false);
+      setIsModalOpen(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -132,6 +137,11 @@ const Contact = () => {
           <img src={contactImage} alt="boy sitting on ground with laptop" />
         </motion.div>
       </div>
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        {successMessage && <p className="text-green-600">{successMessage}</p>}
+        {errorMessage && <p className="text-red-600">{errorMessage}</p>}
+      </Modal>
     </div>
   );
 };
