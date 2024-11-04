@@ -4,7 +4,7 @@ interface ProjectProps {
   title: string;
   imageUrl: string;
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
 }
 
 const ProjectDisplay = ({
@@ -32,16 +32,18 @@ const ProjectDisplay = ({
             rel="noopener noreferrer"
             className="bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black transition-colors"
           >
-            Live Site
+            View Site
           </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-black transition-colors"
-          >
-            GitHub
-          </a>
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-black transition-colors"
+            >
+              GitHub
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

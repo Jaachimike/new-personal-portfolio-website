@@ -11,14 +11,14 @@ const Projects = () => {
       title: "Fragg Investment Ltd",
       imageUrl: fragg,
       liveUrl: "https://fragginvest.com",
-      githubUrl: "https://github.com/August-Deep-Tech/Fragg-Website",
+      // githubUrl: "https://github.com/August-Deep-Tech/Fragg-Website",
     },
     {
       title: "Amadeus University",
       imageUrl: amadeus,
-      liveUrl: "https://amadeus-uni.netlify.app/",
-      githubUrl:
-        "https://github.com/August-Deep-Tech/Amadeus-University-Website",
+      liveUrl: "https://amadeus.edu.ng/",
+      // githubUrl:
+      //   "https://github.com/August-Deep-Tech/Amadeus-University-Website",
     },
     {
       title: "Coalition Technologies",
